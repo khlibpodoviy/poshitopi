@@ -3,15 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/style.css">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <style>
+        :root {
+          --bg-color: #d8d8d8;
+          --box-bg: #ffffff;
+          --text-color: #111111;
+          --accent-color: #0000ff;
+          --accent-hover: #ff0000;
+          --border-style: 2px solid #111111;
+        }
+
+        body {
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          font-family: "Courier New", Courier, monospace;
+          line-height: 1.45;
+          margin: 0 auto;
+          max-width: 800px;
+          padding: 30px 20px;
+        }
+
+        header, article, .classification-box {
+          border: var(--border-style);
+          padding: 20px;
+          margin-bottom: 24px;
+          background-color: var(--box-bg);
+          box-shadow: 5px 5px 0px var(--text-color);
+        }
+
+        header h1 {
+          margin-top: 0;
+          margin-bottom: 12px;
+          font-size: 1.8rem;
+          letter-spacing: -1px;
+        }
+
+        nav {
+          border-top: 1px dashed var(--text-color);
+          padding-top: 10px;
+        }
+
+        nav a {
+          margin-right: 15px;
+        }
+
+        a {
+          color: var(--accent-color);
+          text-decoration: underline;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+
+        a:hover {
+          color: var(--accent-hover);
+          background-color: #ffff00;
+          text-decoration: none;
+        }
+
+        h2 {
+          margin-top: 0;
+          border-bottom: var(--border-style);
+          padding-bottom: 8px;
+          font-size: 1.2rem;
+        }
+
+        ul {
+          list-style-type: square;
+          padding-left: 20px;
+        }
+
+        li {
+          margin-bottom: 8px;
+        }
+
+        blockquote {
+          border-left: 4px solid var(--accent-color);
+          margin: 15px 0;
+          padding: 8px 15px;
+          background-color: #f4f4f4;
+          font-style: italic;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          border: var(--border-style);
+          display: block;
+          margin: 15px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1><a href="/">[THE ARCHIVE]</a></h1>
+        <h1><a href="{{ '/' | relative_url }}">[THE ARCHIVE]</a></h1>
         <nav>
-            <a href="/art/">/ART/</a>
-            <a href="/tech/">/TECH/</a>
+            <a href="{{ '/art/' | relative_url }}">/ART/</a>
+            <a href="{{ '/tech/' | relative_url }}">/TECH/</a>
         </nav>
     </header>
 
